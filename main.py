@@ -100,7 +100,8 @@ if __name__ == '__main__':
     distance = 0
     for i in range(3):
         error_lst.append(abs(gt_base_trans[i] * 1000 - eval_base_point[i] * 1000))
-        distance += math.sqrt(pow(gt_base_trans[i] * 1000 - eval_base_point[i] * 1000, 2))
+        distance += pow(gt_base_trans[i] * 1000 - eval_base_point[i] * 1000, 2)
+    distance = math.sqrt(distance)
 
     print("[INFO] Absolute error(mm) per axis: ", error_lst)
     print("[INFO] Euclidean distance(mm)", distance)
